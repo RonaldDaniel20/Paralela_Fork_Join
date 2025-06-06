@@ -151,8 +151,6 @@ public final class ReciprocalArraySum {
 
         int mid = input.length / 2;
         
-        //Creando la piscina de hilos
-        ForkJoinPool pool = new ForkJoinPool(2);
         
         //Subdiviendo el arreglo original de dos subarreglos
         ReciprocalArraySumTask leftTask = new ReciprocalArraySumTask(0, mid, input);

@@ -7,7 +7,8 @@ import junit.framework.TestCase;
 public class ReciprocalArraySumTest extends TestCase {
     // Número de veces que se debe repetir cada prueba para dar consistencia de los resultados de en el tiempo.
     final static private int REPEATS = 60;
-
+    
+    //Obtiene el número de nucleos del computador
     private static int getNCores() {
             return Runtime.getRuntime().availableProcessors();
     }
@@ -130,6 +131,7 @@ public class ReciprocalArraySumTest extends TestCase {
      */
     public void testParManyTaskTwoMillion() {
         final int ncores = getNCores();
+        System.out.println("Numero de cores: " + ncores);
         final double minimalExpectedSpeedup = (double)ncores * 0.6;
         final double speedup = parTestHelper(2_000_000, true, ncores);
         final String errMsg = String.format("Se esperaba que la implmentación de muchas tareas en paralelo pudiera ejecutarse " +
