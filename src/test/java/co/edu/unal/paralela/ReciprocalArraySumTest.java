@@ -100,7 +100,8 @@ public class ReciprocalArraySumTest extends TestCase {
 
         final long seqTime = (seqEndTime - seqStartTime) / REPEATS;
         final long parTime = (parEndTime - parStartTime) / REPEATS;
-
+        
+        //Calculo del speedup
         return (double)seqTime / (double)parTime;
     }
 
